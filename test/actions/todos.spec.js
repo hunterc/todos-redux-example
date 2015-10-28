@@ -9,4 +9,11 @@ describe('todo actions', () => {
 			text: 'Use Redux'
 		});
 	});
+
+	it('deleteTodo should create DELETE_TODO action', () => {
+		expect(actions.deleteTodo(1)).toEqual({
+			type: types.DELETE_TODO,
+			id: 1
+		});
+	});
 });

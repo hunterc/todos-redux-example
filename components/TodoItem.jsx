@@ -10,10 +10,13 @@ export default class TodoItem extends React.Component {
 	}
 	
 	render() {
-		const { todo } = this.props;
+		const { todo, deleteTodo } = this.props;
 		
 		return (
-			<li>{todo.text}</li>
+			<li>
+				{todo.text}
+				<button className="destroy" onClick={() => deleteTodo(todo.id)} />
+			</li>
 		);
 	}	
 }

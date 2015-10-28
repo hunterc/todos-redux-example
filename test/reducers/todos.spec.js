@@ -67,4 +67,25 @@ describe('todos reducer', () => {
 			id: 0
 		}]);
 	});
+
+	it('should handle DELETE_TODO', () => {
+		expect(
+			todos([{
+				text: 'Run the tests',
+				completed: false,
+				id: 1
+			}, {
+				text: 'Use redux',
+				completed: false,
+				id: 0
+			}], {
+				type: types.DELETE_TODO,
+				id: 1
+			})
+		).toEqual([{
+			text: 'Use redux',
+			completed: false,
+			id: 0
+		}]);
+	});
 });
