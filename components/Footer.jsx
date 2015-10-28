@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/filters';
 
 const FILTER_TITLES = {
-	[SHOW_ALL]: 'ALL',
+	[SHOW_ALL]: 'All',
 	[SHOW_ACTIVE]: 'Active',
 	[SHOW_COMPLETED]: 'Completed'
 };
@@ -47,7 +47,7 @@ export default class Footer extends React.Component {
 		if (completedCount > 0) {
 			return (
 				<button className="clear-completed" onClick={onClearCompleted}>
-					Clear Completed
+					Clear completed
 				</button>
 			);
 		}
