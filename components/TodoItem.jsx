@@ -26,7 +26,7 @@ export default class TodoItem extends React.Component {
 	}
 	
 	render() {
-		const { todo, deleteTodo } = this.props;
+		const { todo, completeTodo, deleteTodo } = this.props;
 		
 		let element;
 		if (this.state.editing) {
@@ -40,6 +40,11 @@ export default class TodoItem extends React.Component {
 		} else {
 			element = (
 				<div className="view">
+					<input className="toggle"
+						type="checkbox"
+						checked={todo.completed}
+						onChange={() => completeTodo(todo.id)}
+					/>
 					<label onDoubleClick={::this.handleDoubleClick}>
 						{todo.text}
 					</label>
@@ -49,7 +54,10 @@ export default class TodoItem extends React.Component {
 		}
 
 		return (
-			<li className={cx({ editing: this.state.editing })}>
+			<li className={cx({
+				completed: todo.completed,
+				editing: this.state.editing
+			})}>
 				{element}
 			</li>
 		);

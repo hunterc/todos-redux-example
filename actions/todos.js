@@ -11,3 +11,7 @@ export function deleteTodo(id) {
 export function editTodo(id, text) {
 	return { type: types.EDIT_TODO, id, text };
 }
+
+export function completeTodo(id) {
+	return { type: types.COMPLETE_TODO, id };
+}

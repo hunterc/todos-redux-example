@@ -24,4 +24,11 @@ describe('todo actions', () => {
 			text: 'Use redux everywhere'
 		});
 	});
+
+	it('completeTodo should create COMPLETE_TODO action', () => {
+		expect(actions.completeTodo(1)).toEqual({
+			type: types.COMPLETE_TODO,
+			id: 1
+		});
+	});
 });

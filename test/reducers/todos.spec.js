@@ -114,4 +114,29 @@ describe('todos reducer', () => {
 			id: 0
 		}])
 	});
+
+	it('should handle COMPLETE_TODO', () => {
+		expect(
+			todos([{
+				text: 'Run the tests',
+				completed: false,
+				id: 1
+			}, {
+				text: 'Use redux',
+				completed: false,
+				id: 0
+			}], {
+				type: types.COMPLETE_TODO,
+				id: 1
+			})
+		).toEqual([{
+			text: 'Run the tests',
+			completed: true,
+			id: 1
+		}, {
+			text: 'Use redux',
+			completed: false,
+			id: 0
+		}]);
+	});
 });
