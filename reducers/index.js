@@ -1,6 +1,8 @@
-export default function rootReducer(state = {}, action) {
-	switch (action.type) {
-	default:
-		return state;
-	}	
-}
+import { combineReducers } from 'redux';
+import todos from './todos';
+
+const rootReducer = combineReducers({
+	todos
+});
+
+export default rootReducer;
