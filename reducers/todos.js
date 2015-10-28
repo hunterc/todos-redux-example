@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO } from '../constants/todos';
+import { ADD_TODO, DELETE_TODO, EDIT_TODO } from '../constants/todos';
 import uuid from 'node-uuid';
 
 export default function todos(state = [], action) {
@@ -13,6 +13,13 @@ export default function todos(state = [], action) {
 	case DELETE_TODO:
 		return state.filter(todo =>
 			todo.id !== action.id
+		);
+
+	case EDIT_TODO:
+		return state.map(todo =>
+			todo.id === action.id
+				? { ...todo, text: action.text }
+				: todo
 		);
 
 	default:

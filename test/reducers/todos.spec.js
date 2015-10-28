@@ -88,4 +88,30 @@ describe('todos reducer', () => {
 			id: 0
 		}]);
 	});
+
+	it('should handle EDIT_TODO', () => {
+		expect(
+			todos([{
+				text: 'Run the tests',
+				completed: false,
+				id: 1
+			}, {
+				text: 'Use redux',
+				completed: false,
+				id: 0
+			}], {
+				type: types.EDIT_TODO,
+				text: 'Fix the tests',
+				id: 1	
+			})
+		).toEqual([{
+			text: 'Fix the tests',
+			completed: false,
+			id: 1
+		}, {
+			text: 'Use redux',
+			completed: false,
+			id: 0
+		}])
+	});
 });

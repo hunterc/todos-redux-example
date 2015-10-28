@@ -42,7 +42,8 @@ export default class TodoTextInput extends Component {
 		return (
 			<input className={
 				classnames({
-				  'new-todo': newTodo
+					edit: this.props.editing,
+					'new-todo': newTodo
 				})}
 				type="text"
 				placeholder={placeholder}
@@ -55,5 +56,3 @@ export default class TodoTextInput extends Component {
 		);
 	}
 }
-
-

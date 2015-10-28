@@ -16,4 +16,12 @@ describe('todo actions', () => {
 			id: 1
 		});
 	});
+
+	it('editTodo should create EDIT_TODO action', () => {
+		expect(actions.editTodo(1, 'Use redux everywhere')).toEqual({
+			type: types.EDIT_TODO,
+			id: 1,
+			text: 'Use redux everywhere'
+		});
+	});
 });
